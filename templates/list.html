@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ol>
+    {% for a in viewlist %}
+        <li>{{a}}</li>
+
+    {% endfor %}
+    </ol> -->
+    <li>
+        {% for a in range(viewlist|length) %}
+        {{viewlist[a]}}
+            <li><a href="/detodo/{{viewlist[a|int]}}">delete</a></li>
+            <li><a href="/update/{{a}}">update</a></li>
+        {% endfor %}
+
+    </li>
+  
+    <form action="/list" method="post">
+
+        <label>Item</label>
+
+      <input type="text" name="item_name">
+
+      <input type="submit" value="submit">
+
+    </form>
+</body>
+</html>
